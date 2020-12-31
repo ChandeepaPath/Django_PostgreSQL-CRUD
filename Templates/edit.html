@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+</head>
+<body>
+    <center>
+    <h1>Edit Emp Details</h1>
+    <hr/>
+   <form method="POST" action="Update/{{EmpDetails.id}}">
+                {% csrf_token %}
+
+    <table border="2">
+        <tr>
+            <td>Employee ID</td>
+            <td><input type="text" name="id" value="{{EmpDetails.id}}" readonly></td>
+        </tr>
+        <tr>
+            <td>Employee Name</td>
+            <td><input type="text" name="empname" value="{{EmpDetails.empname}}" ></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" name="email" value="{{EmpDetails.email}}" ></td>
+        </tr>
+        <tr>
+            <td>Occupation</td>
+            <td><input type="text" name="occupation" value="{{EmpDetails.occupation}}" ></td>
+        </tr>
+        <tr>
+            <td>Salary</td>
+            <td><input type="text" name="salary" value="{{EmpDetails.salary}}" ></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value ="Update Record"></td>
+            <td>
+                    {% if messages %}
+                    {% for mes in messages %}
+                    <b style="color:green;">{{mes}}</b>
+                    {% endfor %}
+                    {% endif %}
+            </td>
+        </tr>
+    </table>
+
+    <a href="{% url 'showEmp' %}">Home Page</a>
+</form>
+</center>
+</body>
+</html>
