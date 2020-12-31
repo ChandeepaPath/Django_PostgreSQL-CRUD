@@ -8,8 +8,8 @@
     <center>
     <h1>Edit Emp Details</h1>
     <hr/>
-   <form method="POST" action="Update/{{EmpDetails.id}}">
-                {% csrf_token %}
+   <form method="POST" action="/Update/{{EmpDetails.id}}">
+    {% csrf_token %}
 
     <table border="2">
         <tr>
